@@ -25,9 +25,16 @@ USER_AGENT = str(
 '''
 DECODED_HTML = str()
 
+'''
+    # This method goes to websites and 
+    # Returns the decoded html form
+    # WARNING -> This method is confusing 
+'''
+
 
 def VisitWebPage():
     try:
+        # This allows for modification of outer scope variables
         global HTML, URL_Link, DECODED_HTML
         """
             # This is raw data.
@@ -52,15 +59,16 @@ def VisitWebPage():
                 charset = "utf-8"
                 DECODED_HTML = HTML_RAW.read().decode(charset)
             except Exception as e:
-                raise e
+                DECODED_HTML = ""
 
                 # This is fresh html source code to the string
         HTML = DECODED_HTML
     except Exception as e:
-        print(e)
+        DECODED_HTML = ""
 
 
 def URL(url):
+
     global URL_Link, HTML
     URL_Link = url
     VisitWebPage()

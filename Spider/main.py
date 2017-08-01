@@ -3,20 +3,24 @@ from queue import Queue
 from spider import Spider
 from domain import *
 from general import *
-	
+
 print("\033c")
 PROJECT_NAME = input("Please enter Project name: ")
 print("\033c")
 HOMEPAGE = input("Please enter the url to crawl: ")
 print("\033c")
-print("Please enter the directory path where the queue and crawled txt files will be store. For example, /../../Desktop/Container. The queue and crawled files would be located at the Desktop and it will be stored inside a folder called Container: ", end="")
+print(
+    "Please enter the directory path where the queue and crawled txt files will be store. For example, "
+    "/../../Desktop/Container. The queue and crawled files would be located at the Desktop and it will be stored "
+    "inside a folder called Container: ",
+    end="")
 PATH = str(input())
 if not PATH.endswith("/"):
-	PATH += "/"
-PROJECT_NAME = PATH +PROJECT_NAME
+    PATH += "/"
+PROJECT_NAME = PATH + PROJECT_NAME
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
-CRAWLED_FILE = PATH+PROJECT_NAME + '/crawled.txt'
+CRAWLED_FILE = PATH + PROJECT_NAME + '/crawled.txt'
 NUMBER_OF_THREADS = 8
 queue = Queue()
 Spider(PROJECT_NAME, HOMEPAGE, DOMAIN_NAME)
