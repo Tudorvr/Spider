@@ -12,7 +12,7 @@ Note: This is part of an open source search engine. The purpose of this tool is 
 
 ***
 # License
- #### -->  READ THE LICENSE. 
+ #### -->  [READ THE LICENSE.](https://github.com/AbdulSheikh/Spider/blob/master/LICENSE.md) 
 
 ***
 # Setup Procedure
