@@ -15,6 +15,18 @@ Note: This is part of an open source search engine. The purpose of this tool is 
  #### -->  READ THE LICENSE. 
 
 ***
+# Setup Procedure
+  ### Python version 3.5+ is required
+  ## Library
+  ## --> pip install HTMLParser
+  ## To run the program
+  ### --> download the project
+  ### --> un-zip the folder
+  ### --> Open terminal
+  ### --> Change current working directory to project location
+  ### --> python main.py
+  ### --> Following prompts
+***
 
 ### Links
 
