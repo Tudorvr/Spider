@@ -23,9 +23,9 @@ Note: This is part of an open source search engine. The purpose of this tool is 
   ### --> download the project
   ### --> un-zip the folder
   ### --> Open terminal
-  ### --> Change current working directory to project location
+  ### --> Change current the terminal working directory to the project location
   ### --> python main.py
-  ### --> Following prompts
+  ### --> Follow Script prompts
 ***
 
 ### Links
