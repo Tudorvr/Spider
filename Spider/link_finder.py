@@ -18,6 +18,7 @@ class LinkFinder(HTMLParser):
                     url = parse.urljoin(self.base_url, value)
                     self.links.add(url)
 
+    # Returns the collected links
     def page_links(self):
         return self.links
 

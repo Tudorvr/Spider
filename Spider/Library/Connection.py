@@ -61,20 +61,22 @@ def VisitWebPage():
             except Exception as e:
                 DECODED_HTML = ""
 
-                # This is fresh html source code to the string
+        # This is the decoded html that a user can read
         HTML = DECODED_HTML
     except Exception as e:
         DECODED_HTML = ""
 
 
 def URL(url):
-
     global URL_Link, HTML
+
     URL_Link = url
     VisitWebPage()
+
     return getHTML()
 
 
 def getHTML():
     global HTML
+
     return HTML
