@@ -3,35 +3,24 @@ from queue import Queue
 from spider import Spider
 from domain import *
 from general import *
+from Library import Requirement_Manager
 
-# Linux clean command when using Linux terminal
-# print("\033c")
-PROJECT_NAME = input("Please enter Project name: ")
-# Linux clean command when using Linux terminal
-# print("\033c")
-HOMEPAGE = input("Please enter the url to crawl: ")
-# Linux clean command when using Linux terminal
-# print("\033c")
-print(
-    "Please enter the directory path where the queue and crawled txt files will be store: ",
-    end="")
-PATH = str(input())
-if "\\" in PATH:
-    PATH = PATH.replace("\\", "/")
-    if not PATH.endswith("/"):
-        PATH += "/"
-PROJECT_NAME = PATH + PROJECT_NAME
-DOMAIN_NAME = get_domain_name(HOMEPAGE)
+# This method gets all requirements from the user
+# This file module was created because it takes up
+# more lines to be in this main.py python module
+Requirement_Manager.Initiate()
+
+PROJECT_NAME = Requirement_Manager.getPath() + Requirement_Manager.getProjectName()
+DOMAIN_NAME = get_domain_name(Requirement_Manager.getHomePage())
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
-CRAWLED_FILE = PATH + PROJECT_NAME + '/crawled.txt'
-NUMBER_OF_THREADS = 8
+CRAWLED_FILE = Requirement_Manager.getPath() + PROJECT_NAME + '/crawled.txt'
 queue = Queue()
-Spider(PROJECT_NAME, HOMEPAGE, DOMAIN_NAME)
+Spider(PROJECT_NAME, Requirement_Manager.getHomePage(), DOMAIN_NAME)
 
-
+print(Requirement_Manager.getCores())
 # Create worker threads (will die when main exits)
 def create_workers():
-    for _ in range(NUMBER_OF_THREADS):
+    for _ in range(Requirement_Manager.getCores()):
         t = threading.Thread(target=work)
         t.daemon = True
         t.start()
